@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
 
+$primary-color: #323131;
+$secondary-color: #2f6061;
+
 * {
   padding: 0;
   margin: 0;
@@ -8,4 +11,24 @@
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
+  color: $primary-color;
+}
+
+main {
+  margin-top: 15px;
+  border-top: 15px solid $secondary-color;
+  padding: 25px;
+  h1,
+  h2,
+  h3 {
+    color: $secondary-color;
+  }
+}
+
+code {
+  width: 100%;
+}
+
+a {
+  color: $primary-color;
 }
