@@ -26,10 +26,13 @@ main {
     text-transform: lowercase;
   }
   h1 + a,
-  h2 + a,
-  code {
+  h2 + a {
     display: inline-block;
     margin-top: 15px;
+  }
+  img {
+    margin-top: 15px;
+    width: 100%;
   }
 }
 
