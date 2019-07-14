@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 app.get('/api/whoami', (req, res) => {
   console.log(req.headers);
   res.json({
-    "ip-address": req.headers['host'],
+    "ip-address": req.ip,
     "language": req.headers['accept-language'],
     "software": req.headers['user-agent']
   });
