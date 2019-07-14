@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 
 let ipaddress, language, software;
 app.get('/api/whoami', (req, res, next) => {
-  ipaddress = req.ip.split(':')[req.ip.length - 1];
+  ipaddress = req.ip,
   language = req.headers['accept-language'],
   software = req.headers['user-agent']
   next();
