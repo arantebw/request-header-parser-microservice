@@ -5,6 +5,7 @@ const cors = require('cors');
 const sass = require('node-sass-middleware')
 
 const app = express();
+
 // Middlewares
 app.use(cors({ optionSuccessStatus: 200 }));
 app.use(sass({
@@ -13,8 +14,10 @@ app.use(sass({
     debug: true,
     outputStyle: 'compressed'
 }));
+
 // Import Font Awesome
 app.use('/fontawesome', express.static(__dirname + '/node_modules/@fortawesome/fontawesome-free/'));
+
 // Import assets
 app.use(express.static(__dirname + '/public'));
 
