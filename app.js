@@ -26,11 +26,17 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-app.get('/api/whoami', (req, res) => {
+let ipaddress, language, software;
+app.get('/api/whoami', (req, res, next) => {
+  ipaddress = req.ip.split(':')[req.ip.length - 1];
+  language = req.headers['accept-language'],
+  software = req.headers['user-agent']
+  next();
+}, (req, res) => {
   res.json({
-    "ip-address": req.ip.split(':')[req.ip.length - 1],
-    "language": req.headers['accept-language'],
-    "software": req.headers['user-agent']
+    "ipaddress": ipaddress,
+    "language": language,
+    "software": software
   });
 });
 
