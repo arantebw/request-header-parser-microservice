@@ -12,12 +12,13 @@ $secondary-color: #2f6061;
 body {
   font-family: 'Source Sans Pro', sans-serif;
   color: $primary-color;
+  margin-top: 15px;
+  border-top: 15px solid $secondary-color;
 }
 
 main {
-  margin-top: 15px;
-  border-top: 15px solid $secondary-color;
   padding: 25px;
+
   h1,
   h2,
   h3 {
@@ -25,11 +26,13 @@ main {
     font-size: 26px;
     text-transform: lowercase;
   }
+
   h1 + a,
   h2 + a {
     display: inline-block;
     margin-top: 15px;
   }
+
   img {
     margin-top: 15px;
     width: 100%;
@@ -42,9 +45,11 @@ a {
 
 footer {
   font-size: 11px;
+
   p,
   ul {
     list-style: none;
+
     li {
       line-height: 2;
     }
@@ -64,8 +69,17 @@ a:hover {
 }
 
 @keyframes anchor-hover {
+
   100% {
     background-color: $secondary-color;
     color: #fff;
+  }
+}
+
+@media (min-width: 768px) {
+
+  main {
+    width: 60%;
+    margin: 0 auto;
   }
 }
