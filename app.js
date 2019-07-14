@@ -9,10 +9,10 @@ const app = express();
 // Middlewares
 app.use(cors({ optionSuccessStatus: 200 }));
 app.use(sass({
-    src: __dirname + '/assets',
-    dest: __dirname + '/public',
-    debug: true,
-    outputStyle: 'compressed'
+  src: __dirname + '/assets',
+  dest: __dirname + '/public',
+  debug: true,
+  outputStyle: 'compressed'
 }));
 
 // Import Font Awesome
@@ -22,7 +22,17 @@ app.use('/fontawesome', express.static(__dirname + '/node_modules/@fortawesome/f
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/views/index.html');
+  console.log('root route');
+  res.sendFile(__dirname + '/views/index.html');
+});
+
+app.get('/api/whoami', (req, res) => {
+  console.log(req.headers);
+  res.json({
+    "ip-address": req.headers['host'],
+    "language": req.headers['accept-language'],
+    "software": req.headers['user-agent']
+  });
 });
 
 module.exports = app;
